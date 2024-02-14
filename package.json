@@ -1,0 +1,45 @@
+{
+  "name": "@webreflection/partial",
+  "version": "0.0.0",
+  "description": "Partial function / Class application",
+  "main": "./cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run rollup:es && rm -rf types && npm run ts && npm run test",
+    "cjs": "ascjs --no-default esm cjs",
+    "rollup:es": "rollup --config rollup/es.config.js",
+    "coveralls": "c8 report --reporter=text-lcov | coveralls",
+    "test": "c8 node test/index.js",
+    "ts": "tsc -p ."
+  },
+  "keywords": ["partial", "function", "class", "parameters"],
+  "author": "Andrea Giammarchi",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "ascjs": "^6.0.3",
+    "c8": "^9.1.0",
+    "coveralls": "^3.1.1",
+    "rollup": "^4.10.0",
+    "typescript": "^5.3.3"
+  },
+  "module": "./esm/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./esm/index.js",
+      "default": "./cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "unpkg": "es.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/partial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/partial/issues"
+  },
+  "homepage": "https://github.com/WebReflection/partial#readme"
+}

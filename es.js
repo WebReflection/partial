@@ -1,0 +1,1 @@
+var partial=function(t){"use strict";const n=(t,...n)=>{const r=n.length;return function(){const e=[];for(let t=arguments.length,i=t<r?r:t,a=0;a<i;a++)e[a]=a<r&&(a>=t||void 0===arguments[a])?n[a]:arguments[a];return t.apply(this,e)}};return t.instance=(t,...r)=>n(((...n)=>new t(...n)),...r),t.partial=n,t}({});
