@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/partial",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Partial function / Class application",
   "main": "./cjs/index.js",
   "scripts": {
