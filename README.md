@@ -40,3 +40,21 @@ const updateCoords = partial(xyz.bind(point), ...[,,0]);
 updateCoords(1, 2);
 point; // {x: 1, y: 2, z: 0}
 ```
+
+Alternatively, it is also possible to `call` or `apply` explicitly.
+
+```js
+import { partial } from '@webreflection/partial';
+
+function xyz(x, y, z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+}
+
+const point = {x: 0, y: 0, z: 0};
+const updateCoords = partial(xyz, ...[,,0]);
+
+updateCoords.call(point, 1, 2);
+point; // {x: 1, y: 2, z: 0}
+```
